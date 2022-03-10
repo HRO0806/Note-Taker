@@ -1,6 +1,6 @@
 const htmlRoutes = require('./routes/htmlRoutes');
 const apiRoutes = require('./routes/apiRoutes');
-const { Notes } = require('./Develop/db/db');
+const { notes } = require('./Develop/db/db');
 const fs = require('fs');
 const express = require('express');
 const path = require('path');
@@ -10,7 +10,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static('./Develop/public'));
 app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
